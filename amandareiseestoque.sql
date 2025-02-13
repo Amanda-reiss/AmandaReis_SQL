@@ -30,7 +30,7 @@ USE `amandareiseestoque`;
 --
 
 CREATE TABLE `cliente` (
-  `cod_cliente` int(11) NOT NULL COMMENT 'Esse campo é responsavel pela chave primária do cliente',
+  `cod_clientee` int(11) NOT NULL COMMENT 'Esse campo é responsavel pela chave primária do cliente',
   `nome_cliente` varchar(45) DEFAULT NULL COMMENT 'Esse campo é responsavel pelo atributo cliente',
   `endereco` varchar(10) DEFAULT NULL COMMENT 'Esse campo é responsavel pelo endereço do cliente',
   `cidade` varchar(50) DEFAULT NULL COMMENT 'Esse campo é responsavel pelo atributo cidade do cliente',
@@ -69,7 +69,7 @@ INSERT INTO `cliente` (`cod_cliente`, `nome_cliente`, `endereco`, `cidade`, `cep
 CREATE TABLE `item_de_pedido` (
   `pedido_num_pedido` int(11) NOT NULL,
   `pedido_cod_produto` int(11) NOT NULL,
-  `qntde` int(11) NOT NULL
+  `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -152,9 +152,9 @@ INSERT INTO `pedido` (`num_pedido`, `prazo_entrega`, `cliente_cod_cliente`, `ven
 
 CREATE TABLE `produto` (
   `cod_produto` int(11) NOT NULL,
-  `unid_produto` varchar(10) DEFAULT NULL,
+  `unidade_medida` varchar(10) DEFAULT NULL,
   `desc_produt` varchar(50) DEFAULT NULL,
-  `valor_unit` decimal(15,2) DEFAULT NULL
+  `valor_unidade` decimal(15,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -182,7 +182,7 @@ INSERT INTO `produto` (`cod_produto`, `unid_produto`, `desc_produt`, `valor_unit
 CREATE TABLE `vendedor` (
   `cod_vendedor` int(11) NOT NULL,
   `nome_vendedor` varchar(50) DEFAULT NULL,
-  `sal_fixo` decimal(15,2) DEFAULT NULL,
+  `salario_fixo` decimal(15,2) DEFAULT NULL,
   `faixa_comissao` char(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
